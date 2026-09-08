@@ -1,0 +1,4085 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Fitness 4 You — Academia em Goiânia</title>
+  <link rel="icon" type="image/png" href="imagens/favicon.png">
+  <link rel="apple-touch-icon" href="imagens/apple-touch-icon.png">
+  <meta name="description" content="Academia Fitness 4 You em Goiânia (Vila Isaura). Musculação, ergometria e 12 modalidades coletivas. 12 anos de tradição, estacionamento gratuito.">
+  <meta name="keywords" content="academia goiania, fitness goiania, musculação goiania, aulas coletivas goiania, jiu-jitsu goiania, muay thai goiania, pilates goiania, academia vila isaura">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fitness4you.com.br/">
+
+  <!-- Open Graph (WhatsApp, Instagram, Facebook) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fitness4you.com.br/">
+  <meta property="og:title" content="Fitness 4 You — Academia em Goiânia">
+  <meta property="og:description" content="Musculação, ergometria e 12 modalidades coletivas em Goiânia. 12 anos transformando vidas. Venha treinar com a gente!">
+  <meta property="og:image" content="https://fitness4you.com.br/imagens/fitness4you-og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Fitness 4 You Academia">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fitness 4 You — Academia em Goiânia">
+  <meta name="twitter:description" content="Musculação, ergometria e 12 modalidades coletivas. 12 anos transformando vidas em Goiânia.">
+  <meta name="twitter:image" content="https://fitness4you.com.br/imagens/fitness4you-og-image.jpg">
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "name": "Fitness 4 You Academia",
+    "description": "Academia com musculação, ergometria e 12 modalidades coletivas em Goiânia.",
+    "url": "https://fitness4you.com.br/",
+    "telephone": "+55-62-99648-7510",
+    "foundingDate": "2014-09-01",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua 15, esquina com Av. Senador Jaime, Qd I Lt 20/21",
+      "addressLocality": "Goiânia",
+      "addressRegion": "GO",
+      "postalCode": "74553-380",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -16.6601,
+      "longitude": -49.2803456
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "05:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "06:00", "closes": "14:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "08:00", "closes": "12:00" }
+    ],
+    "sameAs": ["https://www.instagram.com/fitness4youacademia/"]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      --orange: #DC1F26;
+      --orange-dark: #8B1010;
+      --orange-light: #F04040;
+      --black: #0A0A0A;
+      --dark: #111111;
+      --dark2: #1A1A1A;
+      --dark3: #222222;
+      --gray: #888888;
+      --light: #F5F5F5;
+      --white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      overflow-x: hidden;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--orange);
+      outline-offset: 2px;
+    }
+
+    /* NOTICE BAR */
+    .notice-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 99;
+      background: var(--black);
+      border-bottom: 1px solid rgba(220, 31, 38, 0.35);
+      padding: 10px 5%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.3s ease;
+    }
+    .notice-bar.hidden { transform: translateY(-100%); pointer-events: none; }
+    .notice-bar-icon { flex-shrink: 0; display: flex; }
+    .notice-bar-icon svg { width: 18px; height: 18px; stroke: var(--orange); }
+    .notice-bar-text {
+      flex: 1;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+    }
+    .notice-bar-text strong { color: var(--orange); font-weight: 700; }
+    .notice-bar-close {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      width: 26px; height: 26px;
+      border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; flex-shrink: 0; transition: background 0.2s;
+    }
+    .notice-bar-close:hover { background: rgba(220,31,38,0.2); border-color: rgba(220,31,38,0.4); color: #fff; }
+    body.notice-visible nav { top: 44px; }
+    @media (max-width: 768px) {
+      .notice-bar { padding: 10px 4%; align-items: flex-start; }
+      .notice-bar-text { font-size: 11px; }
+      body.notice-visible nav { top: 62px; }
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 6%;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(220, 31, 38,0.15);
+      transition: opacity 0.3s ease;
+    }
+
+    .logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #AAAAAA;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--orange);
+    }
+
+    .nav-cta {
+      background: var(--orange);
+      color: var(--white);
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .nav-cta:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: var(--black) url('imagens/fitness4you-hero-fachada-noite.jpg') center 38% / cover no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 6% 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-shader-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 65% at center, rgba(6, 3, 3, 0.88) 0%, rgba(6, 3, 3, 0.68) 45%, rgba(6, 3, 3, 0.25) 72%, rgba(6, 3, 3, 0) 100%),
+        linear-gradient(180deg, rgba(6, 3, 3, 0.55) 0%, rgba(6, 3, 3, 0) 22%, rgba(6, 3, 3, 0) 78%, rgba(6, 3, 3, 0.6) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(220, 31, 38,0.16) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    }
+
+    .hero-content {
+      max-width: 640px;
+      min-width: 0;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-logo {
+      width: 64px;
+      height: 64px;
+      display: block;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(44px, 6vw, 80px);
+      line-height: 1.02;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+      overflow-wrap: break-word;
+    }
+
+    .hero-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 17px;
+      color: rgba(238, 227, 220, 0.68);
+      line-height: 1.75;
+      letter-spacing: 0.2px;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .hero-btns {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .btn-primary {
+      position: relative;
+      overflow: hidden;
+      background: var(--orange);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 32px rgba(220,31,38,0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(220,31,38,0.5);
+    }
+
+    .btn-primary-dot {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      width: 8px;
+      height: 8px;
+      margin-top: -4px;
+      border-radius: 50%;
+      background: var(--orange-dark);
+      transition: all 0.4s ease;
+      z-index: 1;
+    }
+
+    .btn-primary:hover .btn-primary-dot {
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      margin-top: 0;
+      border-radius: 999px;
+      transform: scale(1.8);
+    }
+
+    .btn-primary-label {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      transform: translateX(2px);
+      transition: transform 0.35s ease, opacity 0.35s ease;
+    }
+
+    .btn-primary:hover .btn-primary-label {
+      transform: translateX(140%);
+      opacity: 0;
+    }
+
+    .btn-primary-reveal {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transform: translateX(-140%);
+      opacity: 0;
+      transition: transform 0.35s ease, opacity 0.35s ease;
+      pointer-events: none;
+    }
+
+    .btn-primary:hover .btn-primary-reveal {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .btn-primary-reveal svg {
+      width: 15px;
+      height: 15px;
+      stroke: var(--white);
+      stroke-width: 2.5;
+      flex-shrink: 0;
+    }
+
+    .btn-outline {
+      border: 2px solid rgba(255, 255, 255, 0.25);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      background: transparent;
+      transition: border-color 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--orange);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(255,255,255,0.16);
+      padding-top: 20px;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-align: left;
+      padding-right: 14px;
+      margin-right: 14px;
+      border-right: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .stat-item:last-child {
+      padding-right: 0;
+      margin-right: 0;
+      border-right: none;
+    }
+
+    .stat-icon {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      border-radius: 7px;
+      background: rgba(220, 31, 38, 0.12);
+      border: 1px solid rgba(220, 31, 38, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stat-icon svg {
+      width: 14px;
+      height: 14px;
+      stroke: var(--orange);
+      stroke-width: 2;
+    }
+
+    .stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: 0.1px;
+      line-height: 1.25;
+      max-width: 84px;
+      overflow-wrap: break-word;
+    }
+
+    /* SECTION BASE */
+    section {
+      padding: 100px 6%;
+    }
+
+    .section-tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(38px, 5vw, 60px);
+      letter-spacing: -0.5px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .section-sub {
+      color: #888;
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--dark);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+      background: var(--dark2);
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(220, 31, 38, 0.3);
+      box-shadow: 0 0 0 1px rgba(220, 31, 38, 0.08), 0 24px 64px rgba(220, 31, 38, 0.1);
+    }
+
+    .about-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(220, 31, 38,0.05), transparent);
+    }
+
+    .about-line {
+      width: 48px;
+      height: 2px;
+      background: var(--orange);
+      margin: 0 0 20px;
+    }
+
+    .about-lead {
+      color: var(--white);
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 1.55;
+      max-width: 520px;
+    }
+
+    .about-sub-muted {
+      color: #777;
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 480px;
+      margin-top: 14px;
+    }
+
+    .about-stats {
+      display: flex;
+      flex-direction: column;
+      margin-top: 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .about-stat {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 4px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: padding-left 0.25s ease, background 0.25s ease;
+    }
+
+    .about-stat:hover {
+      padding-left: 10px;
+      background: rgba(220, 31, 38, 0.05);
+    }
+
+    .about-stat-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: rgba(220, 31, 38, 0.1);
+      border: 1px solid rgba(220, 31, 38, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.25s ease, border-color 0.25s ease;
+    }
+
+    .about-stat:hover .about-stat-icon {
+      background: rgba(220, 31, 38, 0.22);
+      border-color: rgba(220, 31, 38, 0.45);
+    }
+
+    .about-stat-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--orange);
+      stroke-width: 1.75;
+    }
+
+    .about-stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.35;
+      overflow-wrap: break-word;
+    }
+
+    /* SERVICES */
+    .services {
+      background: var(--black);
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .modalities-header {
+      text-align: center;
+      max-width: 480px;
+      margin: 64px auto 36px;
+      padding-top: 48px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .modalities-header h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.3px;
+      margin-bottom: 8px;
+    }
+
+    .modalities-header p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .modality-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      justify-content: center;
+      gap: 20px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .modality-kids-label {
+      text-align: left;
+      max-width: 1040px;
+      margin: 40px auto 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    .modality-gallery-kids {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      justify-content: start;
+      gap: 20px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .modality-tile {
+      position: relative;
+      aspect-ratio: 3 / 4;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(150deg, var(--dark3) 0%, var(--dark2) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .modality-tile:hover {
+      border-color: rgba(220, 31, 38, 0.4);
+      transform: translateY(-3px);
+    }
+
+    .modality-tile img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .modality-tile-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 55%, transparent 75%);
+    }
+
+    .modality-tile-label {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      z-index: 2;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--white);
+      line-height: 1.2;
+    }
+
+    .service-card {
+      background: var(--dark2);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+      cursor: default;
+    }
+
+    .service-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-4px);
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      background: rgba(220, 31, 38, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      border: 1px solid rgba(220, 31, 38, 0.2);
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .service-card:hover .service-icon {
+      background: rgba(220, 31, 38, 0.22);
+      border-color: rgba(220, 31, 38, 0.45);
+    }
+
+    .service-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--orange);
+      stroke-width: 1.75;
+    }
+
+    .service-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .service-desc {
+      color: #777;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 20px;
+      text-decoration: none;
+    }
+
+    /* WHY US */
+    .why {
+      background: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why::before {
+      content: '';
+      position: absolute;
+      inset: -50px -10px;
+      background-image: url('imagens/fitness4you-why-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      filter: contrast(1.35) saturate(1.25) brightness(0.28) blur(0.3px);
+      z-index: 0;
+      transform: scale(1.04);
+    }
+
+    .why::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.45) 40%, rgba(10,10,10,0.45) 60%, rgba(10,10,10,0.7) 100%),
+        linear-gradient(135deg, rgba(220,31,38,0.08) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .why-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 740px;
+      margin: 0 auto;
+      gap: 0;
+    }
+
+    .why-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .why-item {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .why-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .why-item-header:hover {
+      background: rgba(220, 31, 38,0.08);
+    }
+
+    .why-item-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .why-item-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: rgba(220, 31, 38, 0.12);
+      border: 1px solid rgba(220, 31, 38, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .why-item-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--orange);
+      stroke-width: 1.75;
+    }
+
+    .why-item-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+
+    .why-item-title span {
+      color: var(--orange);
+    }
+
+    .why-arrow {
+      color: var(--orange);
+      font-size: 18px;
+      transition: transform 0.3s;
+    }
+
+    .why-item.open .why-arrow {
+      transform: rotate(180deg);
+    }
+
+    .why-item-body {
+      display: none;
+      padding: 0 24px 20px;
+      color: #b8b8b8;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .why-item.open .why-item-body {
+      display: block;
+    }
+
+    .why-item.open {
+      border-color: rgba(220, 31, 38,0.3);
+    }
+
+    /* PLANS */
+    .plans {
+      background: var(--black);
+    }
+
+    /* ── CLOUD GYM APP ── */
+    .cloudgym {
+      background: var(--black);
+    }
+
+    .cloudgym-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 32px;
+      padding: 16px 18px;
+      background: rgba(220, 31, 38, 0.06);
+      border: 1px solid rgba(220, 31, 38, 0.25);
+      border-radius: 10px;
+    }
+
+    .cloudgym-note svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--orange);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cloudgym-note p {
+      font-size: 13px;
+      color: #999;
+      line-height: 1.6;
+    }
+
+    .cloudgym-note strong {
+      color: var(--white);
+    }
+
+    .plans-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .plans-header .section-sub {
+      margin: 0 auto;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .plans-subgroup-divider {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 16px 0 4px;
+    }
+
+    .plans-subgroup-divider::before,
+    .plans-subgroup-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .plans-subgroup-divider span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      white-space: nowrap;
+    }
+
+    .plan-card {
+      background: var(--dark2);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 36px 28px;
+      position: relative;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .plan-card.featured {
+      border-color: var(--orange);
+      background: linear-gradient(135deg, #1A0E0A, var(--dark2));
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--orange);
+      color: var(--white);
+      padding: 5px 18px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .plan-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    .plan-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 58px;
+      color: var(--white);
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .plan-price sup {
+      font-size: 22px;
+      vertical-align: super;
+    }
+
+    .plan-period {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 28px;
+    }
+
+    .plan-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+      margin-bottom: 28px;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .plan-features li {
+      font-size: 14px;
+      color: #AAAAAA;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .plan-features li::before {
+      content: '✓';
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .plan-cta {
+      display: block;
+      text-align: center;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      color: var(--white);
+      padding: 14px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .plan-cta:hover {
+      border-color: var(--orange);
+      background: rgba(220, 31, 38,0.1);
+    }
+
+    .plan-card.featured .plan-cta {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .plan-card.featured .plan-cta:hover {
+      background: var(--orange-dark);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--black);
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .testimonials-header .section-sub {
+      margin: 0 auto;
+    }
+
+    /* VIDEO TESTIMONIALS — carrossel horizontal estilo stories */
+    .video-grid {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 14px;
+      margin-bottom: 2px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(220,31,38,0.4) transparent;
+    }
+
+    .video-grid::-webkit-scrollbar {
+      height: 5px;
+    }
+
+    .video-grid::-webkit-scrollbar-thumb {
+      background: rgba(220,31,38,0.35);
+      border-radius: 10px;
+    }
+
+    .video-card {
+      position: relative;
+      flex: 0 0 230px;
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      scroll-snap-align: start;
+      transition: transform 0.3s;
+    }
+
+    .video-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .video-card video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: #000;
+      object-fit: cover;
+    }
+
+    /* Play overlay — ícone discreto no canto */
+    .video-play-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 12px;
+      background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 40%);
+      transition: background 0.3s;
+      z-index: 2;
+    }
+
+    .video-card.is-hovering .video-play-overlay {
+      background: linear-gradient(to top, rgba(0,0,0,0.15) 0%, transparent 45%);
+    }
+
+    .video-play-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(10,10,10,0.55);
+      border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s, background 0.2s, border-color 0.2s, opacity 0.3s;
+    }
+
+    .video-card:hover .video-play-btn {
+      transform: scale(1.08);
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .video-card.is-hovering .video-play-btn {
+      opacity: 0.5;
+    }
+
+    /* MODAL */
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .video-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .video-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.93);
+      cursor: pointer;
+    }
+
+    .video-modal-content {
+      position: relative;
+      z-index: 1;
+      width: 92%;
+      max-width: 880px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.9), 0 0 0 1px rgba(220,31,38,0.25);
+      transform: scale(0.9);
+      transition: transform 0.35s cubic-bezier(0.34,1.4,0.64,1);
+    }
+
+    .video-modal.open .video-modal-content {
+      transform: scale(1);
+    }
+
+    .video-modal-content video {
+      width: 100%;
+      display: block;
+      max-height: 82vh;
+      background: #000;
+    }
+
+    .video-modal-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(220,31,38,0.92);
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      line-height: 1;
+    }
+
+    .video-modal-close:hover {
+      background: var(--orange-dark);
+      transform: scale(1.1);
+    }
+
+    .info-modal-content {
+      background: #0d0d0d;
+      padding: 40px;
+      max-height: 82vh;
+      overflow-y: auto;
+      color: rgba(255,255,255,0.75);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.8;
+      text-align: left;
+    }
+
+    .info-modal-content h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 32px;
+      letter-spacing: 0.5px;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+
+    .info-modal-content h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin: 20px 0 6px;
+    }
+
+    .info-modal-content p { margin-bottom: 10px; }
+    .info-modal-content a { color: var(--orange); }
+
+    @media (max-width: 768px) {
+      .video-card { flex-basis: 180px; }
+    }
+
+    /* FAQ */
+    .faq {
+      background: var(--dark);
+    }
+
+    .faq-grid {
+      max-width: 800px;
+      margin: 60px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .faq-item {
+      background: rgba(10, 10, 10, 0.62);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+
+    .faq-item:hover {
+      border-color: rgba(220, 31, 38, 0.3);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: none;
+      color: var(--white);
+      text-align: left;
+      padding: 22px 28px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    .faq-question:hover {
+      background: rgba(220, 31, 38,0.05);
+    }
+
+    .faq-toggle {
+      color: var(--orange);
+      font-size: 22px;
+      font-weight: 300;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 28px 22px;
+      color: #888;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .faq-item.open {
+      border-color: rgba(220, 31, 38,0.3);
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* CTA FINAL */
+    .cta-final {
+      background: var(--black);
+      text-align: center;
+      padding: 120px 6%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(220, 31, 38,0.12) 0%, transparent 70%);
+    }
+
+    .cta-final h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 8vw, 96px);
+      letter-spacing: 2px;
+      line-height: 0.95;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .cta-final h2 span {
+      color: var(--orange);
+    }
+
+    .cta-final p {
+      color: #888;
+      font-size: 17px;
+      max-width: 500px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .cta-final .btn-primary {
+      font-size: 16px;
+      padding: 20px 52px;
+      position: relative;
+    }
+
+    .cta-micro {
+      color: #555;
+      font-size: 13px;
+      margin-top: 32px;
+      position: relative;
+    }
+
+    /* PS */
+    .cta-ps {
+      color: #888;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 620px;
+      margin: 20px auto 0;
+    }
+
+    .cta-ps strong {
+      color: var(--orange);
+    }
+
+    /* FOOTER */
+    footer {
+      background: rgba(10, 10, 10, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 40px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    footer .logo {
+      font-size: 22px;
+    }
+
+    footer nav {
+      background: transparent;
+      position: static;
+      border: none;
+      padding: 0;
+      backdrop-filter: none;
+    }
+
+    footer p {
+      color: #444;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #555;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--orange);
+    }
+
+    /* SOCIAL FAB */
+    .social-fab {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 200;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .social-fab-item {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: #fff;
+      opacity: 0;
+      transform: scale(0.4) translateY(16px);
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.2s;
+      position: relative;
+    }
+
+    .social-fab-item::after {
+      content: attr(data-label);
+      position: absolute;
+      right: 64px;
+      background: rgba(20,20,20,0.92);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .social-fab-item:hover::after {
+      opacity: 1;
+    }
+
+    .social-fab.open .social-fab-item {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    .social-fab.open .fab-whatsapp  { transition-delay: 0.06s; }
+    .social-fab.open .fab-instagram { transition-delay: 0s; }
+
+    .fab-whatsapp {
+      background: #25D366;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+    }
+    .fab-whatsapp:hover  { box-shadow: 0 6px 24px rgba(37,211,102,0.55); transform: scale(1.1); }
+
+    .fab-instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      box-shadow: 0 4px 16px rgba(214,36,159,0.4);
+    }
+    .fab-instagram:hover { box-shadow: 0 6px 24px rgba(214,36,159,0.55); transform: scale(1.1); }
+
+    .social-fab-main {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--orange);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(220,31,38,0.45);
+      transition: background 0.2s, transform 0.3s, box-shadow 0.2s;
+      flex-shrink: 0;
+    }
+
+    .social-fab-main:hover {
+      background: var(--orange-dark);
+      box-shadow: 0 6px 28px rgba(220,31,38,0.55);
+    }
+
+    .social-fab-main .fab-icon-open,
+    .social-fab-main .fab-icon-close {
+      position: absolute;
+      transition: opacity 0.25s, transform 0.3s;
+    }
+
+    .social-fab-main .fab-icon-close {
+      opacity: 0;
+      transform: rotate(-90deg) scale(0.6);
+    }
+
+    .social-fab.open .social-fab-main {
+      transform: rotate(0deg);
+    }
+
+    .social-fab.open .fab-icon-open {
+      opacity: 0;
+      transform: rotate(90deg) scale(0.6);
+    }
+
+    .social-fab.open .fab-icon-close {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+
+    /* NAV INSTAGRAM ICON */
+    .nav-instagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #AAAAAA;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .nav-instagram:hover {
+      border-color: #d6249f;
+      color: var(--white);
+      background: rgba(214, 36, 159, 0.1);
+    }
+
+    /* HOURS */
+    .hours {
+      background: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hours::before {
+      content: '';
+      position: absolute;
+      inset: -50px -10px;
+      background-image: url('imagens/Foto Fachada Academia 2.jpeg');
+      background-size: cover;
+      background-position: center 40%;
+      background-attachment: fixed;
+      filter: contrast(1.3) saturate(1.2) brightness(0.25) blur(0.3px);
+      z-index: 0;
+      transform: scale(1.04);
+    }
+
+    .hours::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(10,10,10,0.6) 0%, rgba(10,10,10,0.15) 40%, rgba(10,10,10,0.15) 60%, rgba(10,10,10,0.6) 100%),
+        linear-gradient(135deg, rgba(220,31,38,0.07) 0%, transparent 55%);
+      z-index: 1;
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hours-card {
+      background: rgba(10, 4, 4, 0.68);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 40px 32px;
+      text-align: center;
+      transition: border-color 0.3s, transform 0.3s, background 0.3s;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .hours-card:hover {
+      border-color: rgba(220, 31, 38, 0.4);
+      transform: translateY(-5px);
+    }
+
+    .hours-card-today {
+      border-color: rgba(220, 31, 38, 0.4) !important;
+      background: rgba(35, 8, 8, 0.7) !important;
+      box-shadow: 0 0 0 1px rgba(220, 31, 38, 0.25), 0 16px 48px rgba(220, 31, 38, 0.15) !important;
+    }
+
+    .hours-icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 18px;
+      border-radius: 10px;
+      background: rgba(220, 31, 38, 0.1);
+      border: 1px solid rgba(220, 31, 38, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hours-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--orange);
+      stroke-width: 1.75;
+    }
+
+    .hours-days {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 20px;
+    }
+
+    .hours-time {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 54px;
+      color: var(--white);
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .hours-time span {
+      color: var(--orange);
+    }
+
+    .hours-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .hours-status {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hours-card-today .hours-status {
+      display: flex;
+    }
+
+    .hours-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .hours-status.is-open { color: #4ADE80; }
+    .hours-status.is-open .hours-status-dot { background: #4ADE80; box-shadow: 0 0 8px #4ADE80; }
+    .hours-status.is-closed { color: #888; }
+    .hours-status.is-closed .hours-status-dot { background: #888; }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-content>* {
+      animation: fadeInUp 0.7s ease both;
+    }
+
+    .hero-content>*:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .hero-content>*:nth-child(2) {
+      animation-delay: 0.25s;
+    }
+
+    .hero-content>*:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .hero-content>*:nth-child(4) {
+      animation-delay: 0.55s;
+    }
+
+    .hero-content>*:nth-child(5) {
+      animation-delay: 0.7s;
+    }
+
+    .hero-content>*:nth-child(6) {
+      animation-delay: 0.85s;
+    }
+
+    /* MOBILE MENU */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+      z-index: 102;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.2s;
+    }
+
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: rgba(8,4,4,0.97);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 101;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-menu.open { opacity: 1; pointer-events: auto; }
+
+    .mobile-menu-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 32px;
+    }
+
+    .mobile-menu-links a {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 44px;
+      letter-spacing: 3px;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .mobile-menu-links a:hover { color: var(--orange); }
+
+    .mobile-menu-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(220,31,38,0.4);
+      margin-bottom: 28px;
+    }
+
+    /* ════════════════════════════
+       MOBILE — 768px
+    ════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* NAV */
+      .nav-hamburger { display: flex; }
+      .nav-instagram, .nav-links, .nav-cta { display: none; }
+
+      /* HERO — empilha logo em cima do texto */
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 110px 6% 60px;
+        min-height: 100svh;
+        background-attachment: scroll;
+      }
+
+      .hero-logo {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: clamp(44px, 12vw, 68px);
+      }
+
+      .hero-sub {
+        font-size: 15px;
+        margin-bottom: 28px;
+      }
+
+      .hero-btns {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+        justify-items: center;
+      }
+
+      .stat-item {
+        justify-content: center;
+        text-align: left;
+        width: 100%;
+        border-right: none;
+        padding-right: 0;
+        margin-right: 0;
+      }
+
+      /* SECTIONS */
+      section { padding: 72px 5%; }
+
+      .section-title {
+        font-size: clamp(32px, 8vw, 48px);
+      }
+
+      /* ABOUT */
+      .about-grid { grid-template-columns: 1fr; }
+      .about-image { aspect-ratio: 16/9; }
+
+      /* SERVICES */
+      .services-header { flex-direction: column; gap: 12px; }
+      .services-grid { grid-template-columns: 1fr; }
+
+      /* WHY */
+      .why::before { background-attachment: scroll; }
+      .why-grid { grid-template-columns: 1fr; }
+
+      /* PLANS */
+      .plans-grid { grid-template-columns: 1fr; gap: 16px; }
+      .plan-card.featured { transform: scale(1) !important; }
+      .plan-card.featured:hover { transform: translateY(-6px) !important; }
+
+      /* FACADE BANNER */
+      .facade-banner { padding: 72px 6%; min-height: 420px; }
+      .facade-sub { font-size: 14px; }
+      .facade-title { font-size: clamp(38px, 10vw, 56px); }
+
+      /* TESTIMONIALS */
+      .testimonials-header .section-sub { font-size: 14px; }
+
+      /* HOURS */
+      .hours::before { background-attachment: scroll; }
+      .hours-grid { grid-template-columns: 1fr; }
+      .hours-time { font-size: 42px; }
+
+      /* FAQ */
+      .faq-grid { margin-top: 32px; }
+      .faq-question { font-size: 14px; padding: 18px 20px; }
+      .faq-answer { padding: 0 20px 18px; }
+
+      /* CTA */
+      .cta-final { padding: 80px 5%; }
+      .cta-final h2 { font-size: clamp(44px, 12vw, 72px); }
+      .cta-final p { font-size: 15px; }
+      .cta-final .btn-primary { font-size: 13px; padding: 16px 32px; }
+
+      /* FOOTER */
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+        padding: 32px 5%;
+      }
+
+      /* MARQUEE */
+      .marquee-item { font-size: 11px; padding: 0 16px; gap: 16px; }
+
+      /* SOCIAL FAB */
+      .social-fab { bottom: 20px; right: 20px; }
+      .social-fab-main { width: 52px; height: 52px; }
+      .social-fab-item { width: 44px; height: 44px; }
+    }
+
+    /* ════════════════════════════
+       MOBILE PEQUENO — 480px
+    ════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: clamp(38px, 11vw, 56px); }
+      .hero-logo { width: 52px; height: 52px; }
+      .btn-primary, .btn-outline { padding: 14px 24px; font-size: 12px; }
+      .hero-btns { flex-direction: column; align-items: center; width: 100%; }
+      .hero-btns a { width: 100%; text-align: center; }
+      .hours-time { font-size: 36px; }
+      .section-title { font-size: clamp(28px, 9vw, 40px); }
+      .plan-price { font-size: 44px; }
+    }
+
+    /* ── GLASSMORPHISM ── */
+
+    /* Nav — reforça o glass existente */
+    nav {
+      background: rgba(8, 4, 4, 0.55) !important;
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid rgba(220, 31, 38, 0.18) !important;
+    }
+
+    /* Hero content — transparente, texto flutua sobre o shader */
+    .hero-content {
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      box-shadow: none;
+    }
+
+    /* Service cards */
+    .service-card {
+      background: rgba(20, 8, 8, 0.5) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    .service-card:hover {
+      background: rgba(30, 8, 8, 0.65) !important;
+      border-color: var(--orange) !important;
+      box-shadow: 0 16px 48px rgba(220, 31, 38, 0.15);
+    }
+
+    /* Plan cards */
+    .plan-card {
+      background: rgba(18, 6, 6, 0.55) !important;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.07) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    }
+    .plan-card.featured {
+      background: rgba(35, 8, 8, 0.7) !important;
+      border-color: var(--orange) !important;
+      box-shadow: 0 0 0 1px var(--orange), 0 24px 64px rgba(220, 31, 38, 0.25) !important;
+    }
+
+    /* ── MELHORIA 2: Plano featured com mais destaque ── */
+    .plan-card.featured {
+      background: linear-gradient(160deg, #200a0a 0%, #1a1a1a 100%);
+      box-shadow: 0 0 0 1px var(--orange), 0 24px 64px rgba(220,31,38,0.2);
+      transform: scale(1.04);
+    }
+    .plan-card.featured:hover {
+      transform: scale(1.04) translateY(-6px);
+    }
+    .plan-card.featured .plan-price {
+      color: var(--orange);
+    }
+    .plan-badge {
+      background: var(--orange);
+      box-shadow: 0 4px 16px rgba(220,31,38,0.5);
+      font-size: 10px;
+      letter-spacing: 3px;
+    }
+
+    /* ── MELHORIA 3: Scroll reveal ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    @keyframes iconWake {
+      from { transform: scale(0.6); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .reveal.visible .service-icon,
+    .reveal.visible .about-stat-icon,
+    .reveal.visible .modality-tile img {
+      animation: iconWake 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s both;
+    }
+
+    /* ══════════════════════════════════════════════
+       PREMIUM VISUAL OVERHAUL — DARK LUXURY ATHLETIC
+    ══════════════════════════════════════════════ */
+
+    /* Body font upgrade */
+    body {
+      font-family: 'DM Sans', 'Barlow', sans-serif;
+    }
+
+    /* Film grain texture overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9997;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 220px 220px;
+      opacity: 0.022;
+      mix-blend-mode: overlay;
+    }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 0; }
+
+    /* ── SELECTION ── */
+    ::selection { background: var(--orange); color: #fff; }
+
+    /* ── SECTION TAGS — redesign with leading line ── */
+    .section-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--orange);
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1.5px;
+      background: var(--orange);
+      flex-shrink: 0;
+    }
+
+    /* ── NAV — tighter, more refined ── */
+    .nav-links a {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: rgba(255,255,255,0.55);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--orange);
+      transition: width 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      border-radius: 2px;
+      box-shadow: inset 0 0 0 0 rgba(255,255,255,0.08);
+      transition: box-shadow 0.4s ease, transform 0.15s, background 0.2s;
+    }
+
+    .nav-cta:hover {
+      box-shadow: inset 400px 0 0 0 var(--orange-dark);
+      transform: translateY(-1px);
+      background: var(--orange);
+    }
+
+    .btn-outline {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      border-color: rgba(255,255,255,0.12);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--orange);
+      background: rgba(220,31,38,0.07);
+    }
+
+    /* ── CONVÊNIOS ── */
+    .convenios-panel {
+      max-width: 640px;
+      margin: 0 auto;
+      background: var(--dark2);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 36px 40px;
+    }
+
+    .convenio-badges {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .convenio-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .convenio-badge-logo {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      display: block;
+      object-fit: cover;
+    }
+
+    .convenio-badge-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--white);
+    }
+
+    .convenio-badge-sub {
+      font-size: 11px;
+      color: #666;
+    }
+
+    .convenio-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      margin: 28px 0;
+    }
+
+    .convenio-access-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #666;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .convenio-access-items {
+      display: flex;
+      justify-content: center;
+      gap: 36px;
+      flex-wrap: wrap;
+    }
+
+    .convenio-access-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--white);
+    }
+
+    .convenio-howto {
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: #888;
+      letter-spacing: 0.2px;
+      margin-top: 18px;
+    }
+
+    .convenio-note {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    .convenio-note a {
+      color: var(--orange);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .convenio-note a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .convenios-panel { padding: 28px 24px; }
+      .convenio-badges { gap: 24px; }
+    }
+
+    /* ── FACADE PARALLAX BANNER ── */
+    .facade-banner {
+      position: relative;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 6%;
+      overflow: hidden;
+      background: var(--black) url('imagens/fitness4you-facade-photo-dia.jpg') center 42% / cover no-repeat;
+    }
+
+    .facade-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(6, 3, 3, 0.8) 0%, rgba(6, 3, 3, 0.55) 45%, rgba(6, 3, 3, 0.85) 100%);
+      z-index: 1;
+    }
+
+    .facade-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .facade-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(44px, 6vw, 76px);
+      letter-spacing: 1px;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .facade-title span { color: var(--orange); }
+
+    .facade-sub {
+      font-size: 16px;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 36px;
+      letter-spacing: 0.3px;
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .facade-line {
+      width: 48px;
+      height: 2px;
+      background: var(--orange);
+      margin: 0 auto 24px;
+    }
+
+
+    /* ── PAYMENT MODAL ── */
+    .payment-modal {
+      position: fixed; inset: 0; z-index: 20000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 16px; opacity: 0; pointer-events: none; transition: opacity 0.3s;
+    }
+    .payment-modal.open { opacity: 1; pointer-events: auto; }
+    .payment-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.75); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); cursor: pointer; }
+    .payment-content {
+      position: relative; z-index: 1;
+      background: #111; border: 1px solid rgba(220,31,38,0.25);
+      border-radius: 16px; width: 100%; max-width: 460px;
+      max-height: 92vh; overflow-y: auto;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.85), 0 0 0 1px rgba(220,31,38,0.1);
+      transform: translateY(24px) scale(0.96);
+      transition: transform 0.38s cubic-bezier(0.34,1.4,0.64,1);
+    }
+    .payment-modal.open .payment-content { transform: translateY(0) scale(1); }
+    .pay-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 22px 0;
+    }
+    .pay-steps { display: flex; align-items: center; gap: 0; }
+    .pay-dot {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; color: #444;
+      font-family: 'DM Sans', sans-serif; transition: all 0.3s; flex-shrink: 0;
+    }
+    .pay-dot.active { background: var(--orange); border-color: var(--orange); color: #fff; box-shadow: 0 0 0 4px rgba(220,31,38,0.2); }
+    .pay-dot.done { background: rgba(220,31,38,0.15); border-color: rgba(220,31,38,0.5); color: var(--orange); }
+    .pay-line { width: 28px; height: 1.5px; background: rgba(255,255,255,0.08); transition: background 0.3s; }
+    .pay-line.done { background: rgba(220,31,38,0.35); }
+    .pay-close {
+      width: 30px; height: 30px; border-radius: 50%;
+      background: rgba(255,255,255,0.05); border: none;
+      color: #555; cursor: pointer; display: flex; align-items: center;
+      justify-content: center; font-size: 14px; transition: background 0.2s, color 0.2s;
+    }
+    .pay-close:hover { background: rgba(220,31,38,0.2); color: #fff; }
+    .pay-body { padding: 22px; }
+    .pay-title { font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 1px; color: #fff; margin-bottom: 4px; }
+    .pay-subtitle { font-size: 13px; color: #555; margin-bottom: 22px; }
+    .pay-pane { display: none; }
+    .pay-pane.active { display: block; }
+    .pay-field { margin-bottom: 14px; }
+    .pay-field label {
+      display: block; font-size: 10px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; color: #555;
+      margin-bottom: 7px; font-family: 'Barlow Condensed', sans-serif;
+    }
+    .pay-field input, .pay-field select {
+      width: 100%; background: rgba(255,255,255,0.04);
+      border: 1.5px solid rgba(255,255,255,0.08); border-radius: 8px;
+      padding: 12px 14px; color: #fff; font-size: 15px;
+      font-family: 'DM Sans', sans-serif; outline: none;
+      transition: border-color 0.2s, background 0.2s; appearance: none;
+    }
+    .pay-field input::placeholder { color: #333; }
+    .pay-field input:focus, .pay-field select:focus {
+      border-color: rgba(220,31,38,0.55); background: rgba(220,31,38,0.04);
+    }
+    .pay-field select option { background: #111; color: #fff; }
+    .student-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+    .student-btn {
+      padding: 11px 8px; border-radius: 8px;
+      border: 1.5px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04); color: #555;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+    }
+    .student-btn.active { border-color: var(--orange); background: rgba(220,31,38,0.1); color: #fff; }
+    .student-note { font-size: 12px; color: var(--orange); text-align: center; font-weight: 600; margin-top: 6px; }
+    .pay-btn {
+      width: 100%; background: var(--orange); color: #fff; border: none;
+      border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700;
+      cursor: pointer; margin-top: 6px; font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0.3px; transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 20px rgba(220,31,38,0.3);
+    }
+    .pay-btn:hover { background: var(--orange-dark); transform: translateY(-1px); }
+    .pay-btn.secondary {
+      background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.1);
+      color: #aaa; box-shadow: none;
+    }
+    .pay-btn.secondary:hover { background: rgba(255,255,255,0.08); transform: translateY(-1px); }
+    .pay-qr-wrap {
+      background: #fff; border-radius: 12px; padding: 12px;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+    }
+    .pay-qr-wrap img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      display: block;
+    }
+    .pay-amount-box {
+      background: rgba(220,31,38,0.08); border: 1px solid rgba(220,31,38,0.2);
+      border-radius: 8px; padding: 11px 16px;
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;
+    }
+    .pay-amount-label { font-size: 13px; color: #777; }
+    .pay-amount-value { font-family: 'Bebas Neue', sans-serif; font-size: 26px; color: var(--orange); letter-spacing: 1px; }
+    .pay-or-sep {
+      display: flex; align-items: center; gap: 10px;
+      color: #333; font-size: 11px; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 14px;
+    }
+    .pay-or-sep::before, .pay-or-sep::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.06); }
+    .pay-pix-box {
+      background: rgba(255,255,255,0.03); border: 1.5px solid rgba(255,255,255,0.07);
+      border-radius: 8px; padding: 12px; margin-bottom: 14px;
+    }
+    .pay-pix-code {
+      font-family: monospace; font-size: 9.5px; color: #666;
+      word-break: break-all; line-height: 1.7; display: block; margin-bottom: 10px;
+    }
+    .pay-copy-btn {
+      width: 100%; background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+      padding: 9px; color: #bbb; font-size: 13px; font-weight: 600;
+      cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+      display: flex; align-items: center; justify-content: center; gap: 7px;
+    }
+    .pay-copy-btn:hover { background: rgba(220,31,38,0.12); border-color: rgba(220,31,38,0.3); color: #fff; }
+    .pay-copy-btn.copied { background: rgba(0,180,80,0.12); border-color: rgba(0,180,80,0.3); color: #00c458; }
+    .pay-success-icon {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(0,180,80,0.12); border: 2px solid rgba(0,180,80,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin: 0 auto 16px; color: #00c458;
+    }
+    .pay-wa-btn {
+      width: 100%; background: #25D366; color: #fff; border: none;
+      border-radius: 8px; padding: 14px; font-size: 14px; font-weight: 700;
+      cursor: pointer; font-family: 'DM Sans', sans-serif;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      text-decoration: none; transition: background 0.2s, transform 0.15s;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.25);
+    }
+    .pay-wa-btn:hover { background: #1ea855; transform: translateY(-1px); }
+    .pay-skip-btn {
+      width: 100%; background: transparent; border: none;
+      color: #333; font-size: 12px; cursor: pointer;
+      margin-top: 10px; font-family: 'DM Sans', sans-serif;
+    }
+    .pay-skip-btn:hover { color: #666; }
+    @media (max-width: 480px) {
+      .payment-content { border-radius: 12px; }
+      .pay-body { padding: 16px; }
+      .pay-qr-wrap img { width: 160px; height: 160px; }
+    }
+
+    /* ── MARQUEE STRIP ── */
+    .marquee-strip {
+      background: var(--dark);
+      border-top: 1px solid rgba(220, 31, 38, 0.3);
+      border-bottom: 1px solid rgba(220, 31, 38, 0.3);
+      padding: 11px 0;
+      overflow: hidden;
+      position: relative;
+      z-index: 10;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 26s linear infinite;
+    }
+
+    .marquee-strip:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    .marquee-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--orange);
+      padding: 0 24px;
+      white-space: nowrap;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .marquee-item::after {
+      content: '◆';
+      font-size: 5px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    @keyframes marqueeScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ── SERVICE CARDS ── */
+    .service-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 19px;
+    }
+
+    .service-link {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      transition: gap 0.25s, opacity 0.25s;
+    }
+
+    .service-link:hover { gap: 10px; opacity: 0.8; }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(220,31,38,0.5), transparent);
+      transform: scaleX(0);
+      transition: transform 0.45s ease;
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    /* ── PLAN CARDS ── */
+    .plan-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 14px;
+    }
+
+    .plan-badge {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      border-radius: 2px;
+      letter-spacing: 3px;
+    }
+
+    /* ── WHY ITEMS ── */
+    .why-item-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    /* ── HOURS ── */
+    .hours-days {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .hours-sub {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    /* ── STATS ── */
+    .stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .about-stat-label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.2px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.04) !important;
+    }
+
+    @keyframes livePulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(220,31,38,0.4); }
+      50%       { opacity: 0.6; box-shadow: 0 0 0 5px rgba(220,31,38,0); }
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+
+
+  <!-- NOTICE BAR -->
+  <div class="notice-bar" id="noticeBar">
+    <span class="notice-bar-icon"><i data-lucide="alert-triangle"></i></span>
+    <p class="notice-bar-text">
+      <strong>Aviso Importante:</strong> É <strong>proibido</strong> o acesso e/ou trânsito de crianças nas dependências da academia, exceto crianças alunas das modalidades infantis da Fitness 4 You.
+    </p>
+    <button class="notice-bar-close" onclick="closeNotice()" aria-label="Fechar aviso">✕</button>
+  </div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">
+      <img src="imagens/WhatsApp Image 2026-04-09 at 21.29.00.jpeg" alt="Fitness 4 You" style="height:52px;width:52px;border-radius:50%;object-fit:cover;display:block;">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#services">Serviços</a></li>
+      <li><a href="#plans">Planos</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#horarios">Horários</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a href="https://www.instagram.com/fitness4youacademia/" class="nav-instagram" target="_blank" rel="noopener noreferrer" title="Instagram @fitness4youacademia" aria-label="Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+      </a>
+      <a href="https://wa.me/5562996487510?text=Quero+conhecer+a+Fitness+4+You!" class="nav-cta" target="_blank" rel="noopener noreferrer">Fale Conosco</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-shader-overlay"></div>
+
+    <div class="hero-content">
+      <img class="hero-logo" src="imagens/fitness4you-logo-nova.png" alt="Fitness 4 You">
+      <h1>
+        Seu próximo corpo começa no seu próximo treino
+      </h1>
+      <p class="hero-sub">
+        12 anos transformando vidas em Goiânia: musculação, lutas, aulas coletivas e professores que acompanham cada
+        evolução — e um time que não deixa você parar no meio do caminho.
+      </p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5562996487510?text=Quero+comecar+na+Fitness+4+You!" class="btn-primary"
+          target="_blank" rel="noopener noreferrer">
+          <span class="btn-primary-dot"></span>
+          <span class="btn-primary-label">Quero Treinar Aqui</span>
+          <span class="btn-primary-reveal">Quero Treinar Aqui <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a href="#plans" class="btn-outline">Ver Planos</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-icon"><i data-lucide="square-parking"></i></div>
+          <div class="stat-label">Estacione grátis</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i data-lucide="unlock"></i></div>
+          <div class="stat-label">Sem fidelidade</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i data-lucide="layers"></i></div>
+          <div class="stat-label">Estrutura completa</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon"><i data-lucide="clock"></i></div>
+          <div class="stat-label">Aberto todos os dias</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span class="marquee-item">Musculação</span>
+      <span class="marquee-item">Ergometria</span>
+      <span class="marquee-item">Ritmos</span>
+      <span class="marquee-item">Ritbox</span>
+      <span class="marquee-item">Jump</span>
+      <span class="marquee-item">Step</span>
+      <span class="marquee-item">Treinamento Funcional</span>
+      <span class="marquee-item">Mobilidade</span>
+      <span class="marquee-item">Mat Pilates</span>
+      <span class="marquee-item">Muay Thai</span>
+      <span class="marquee-item">Jiu-jitsu</span>
+      <span class="marquee-item">Crosskids</span>
+      <span class="marquee-item">Jiu-jitsu Kids</span>
+      <span class="marquee-item">Musculação</span>
+      <span class="marquee-item">Ergometria</span>
+      <span class="marquee-item">Ritmos</span>
+      <span class="marquee-item">Ritbox</span>
+      <span class="marquee-item">Jump</span>
+      <span class="marquee-item">Step</span>
+      <span class="marquee-item">Treinamento Funcional</span>
+      <span class="marquee-item">Mobilidade</span>
+      <span class="marquee-item">Mat Pilates</span>
+      <span class="marquee-item">Muay Thai</span>
+      <span class="marquee-item">Jiu-jitsu</span>
+      <span class="marquee-item">Crosskids</span>
+      <span class="marquee-item">Jiu-jitsu Kids</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-image reveal" style="background:#000;padding:0;border-color:rgba(220,31,38,0.35);position:relative;">
+        <video
+          id="institutionalVideo"
+          muted
+          loop
+          playsinline
+          preload="none"
+          style="width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;">
+          <source data-src="videos/institucional.mp4" type="video/mp4">
+        </video>
+        <button
+          id="soundToggle"
+          onclick="toggleVideoSound()"
+          aria-label="Ativar/desativar som"
+          style="
+            position:absolute;
+            bottom:16px;
+            right:16px;
+            width:42px;
+            height:42px;
+            border-radius:50%;
+            background:rgba(10,10,10,0.7);
+            backdrop-filter:blur(8px);
+            border:1px solid rgba(255,255,255,0.15);
+            cursor:pointer;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            transition:background 0.2s, border-color 0.2s, transform 0.15s;
+            z-index:3;
+          "
+          onmouseenter="this.style.background='rgba(220,31,38,0.8)';this.style.borderColor='var(--orange)'"
+          onmouseleave="this.style.background='rgba(10,10,10,0.7)';this.style.borderColor='rgba(255,255,255,0.15)'">
+          <!-- Ícone mudo (padrão) -->
+          <svg id="iconMuted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <line x1="23" y1="9" x2="17" y2="15"/>
+            <line x1="17" y1="9" x2="23" y2="15"/>
+          </svg>
+          <!-- Ícone com som (oculto) -->
+          <svg id="iconSound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+        </button>
+      </div>
+      <div>
+        <div class="about-line reveal reveal-delay-1"></div>
+        <span class="section-tag reveal reveal-delay-1">Sobre Nós</span>
+        <h2 class="section-title reveal reveal-delay-2">Sua Jornada <span>Fitness</span> Começa Aqui</h2>
+        <p class="about-lead">
+          Na Fitness 4 You, somos dedicados a te ajudar a alcançar seu potencial máximo. Com equipamentos de ponta,
+          profissionais especializados e uma comunidade acolhedora, criamos o ambiente perfeito para você superar seus
+          objetivos.
+        </p>
+        <p class="about-sub-muted">
+          Não importa se você quer emagrecer, ganhar massa, melhorar a saúde ou simplesmente se sentir melhor — a gente
+          tem o caminho certo pra você.
+        </p>
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-icon"><i data-lucide="flame"></i></div>
+            <div class="about-stat-label">Emagrecimento</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-icon"><i data-lucide="dumbbell"></i></div>
+            <div class="about-stat-label">Ganho de massa</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-icon"><i data-lucide="heart-pulse"></i></div>
+            <div class="about-stat-label">Saúde e condicionamento</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-icon"><i data-lucide="sparkles"></i></div>
+            <div class="about-stat-label">Bem-estar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-header">
+      <div>
+        <span class="section-tag reveal">Nossos Serviços</span>
+        <h2 class="section-title reveal reveal-delay-1">Tudo o Que Você <span>Precisa</span></h2>
+      </div>
+      <p class="section-sub reveal reveal-delay-2">Musculação, ergometria e 12 modalidades coletivas — para todas as idades e objetivos.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- Musculação -->
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><i data-lucide="dumbbell"></i></div>
+        <div class="service-title">Musculação</div>
+        <p class="service-desc">Área equipada com maquinários modernos e profissionais de educação física presentes para orientar cada treino com segurança e eficiência.</p>
+        <a href="https://wa.me/5562996487510?text=Quero+saber+sobre+Musculacao" class="service-link" target="_blank" rel="noopener noreferrer">Quero começar →</a>
+      </div>
+
+      <!-- Ergometria -->
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><i data-lucide="bike"></i></div>
+        <div class="service-title">Ergometria</div>
+        <p class="service-desc">Esteiras, bikes e equipamentos de cardio de alta performance para melhorar o condicionamento, queimar gordura e cuidar do coração.</p>
+        <a href="https://wa.me/5562996487510?text=Quero+saber+sobre+Ergometria" class="service-link" target="_blank" rel="noopener noreferrer">Saber mais →</a>
+      </div>
+
+    </div>
+
+    <div class="modalities-header">
+      <h3 class="reveal">Aulas Coletivas</h3>
+      <p class="reveal">12 modalidades — para adultos e crianças, do iniciante ao avançado.</p>
+    </div>
+
+    <div class="modality-gallery">
+      <!-- Adultos -->
+      <div class="modality-tile reveal">
+        <img src="modalidades/ritmos.jpg" alt="Aula de Ritmos" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Ritmos</div>
+      </div>
+      <div class="modality-tile reveal">
+        <img src="modalidades/ritbox.jpg" alt="Aula de Ritbox" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Ritbox</div>
+      </div>
+      <div class="modality-tile reveal">
+        <img src="modalidades/jump.jpg" alt="Aula de Jump" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Jump</div>
+      </div>
+      <div class="modality-tile reveal">
+        <img src="modalidades/step.jpg" alt="Aula de Step" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Step</div>
+      </div>
+      <div class="modality-tile reveal">
+        <img src="modalidades/funcional.jpg" alt="Aula de Treinamento Funcional" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Treinamento Funcional</div>
+      </div>
+      <div class="modality-tile reveal">
+        <img src="modalidades/mobilidade.jpg" alt="Aula de Mobilidade" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Mobilidade</div>
+      </div>
+      <div class="modality-tile reveal">
+        <img src="modalidades/pilates.jpg" alt="Aula de Mat Pilates" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Mat Pilates</div>
+      </div>
+      <div class="modality-tile reveal">
+        <img src="modalidades/studiopilates.jpg" alt="Aula de Studio Pilates" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Studio Pilates</div>
+      </div>
+      <div class="modality-tile reveal">
+        <img src="modalidades/muaythai.jpg" alt="Aula de Muay Thai" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Muay Thai</div>
+      </div>
+      <div class="modality-tile reveal">
+        <img src="modalidades/jiujitsu.jpg" alt="Aula de Jiu-jitsu" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Jiu-jitsu</div>
+      </div>
+    </div>
+
+    <p class="modality-kids-label reveal">Infantil</p>
+    <div class="modality-gallery-kids">
+      <div class="modality-tile reveal">
+        <img src="modalidades/crosskids.jpg" alt="Aula de Crosskids" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Crosskids</div>
+      </div>
+      <div class="modality-tile reveal">
+        <img src="modalidades/jiujitsukids.jpg" alt="Aula de Jiu-jitsu Kids" loading="lazy">
+        <div class="modality-tile-overlay"></div>
+        <div class="modality-tile-label">Jiu-jitsu Kids</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="why" id="why">
+    <div class="why-grid">
+      <div>
+        <span class="section-tag">Por Que Nos Escolher</span>
+        <h2 class="section-title">Por Que Escolher a <span>Fitness</span> 4 You?</h2>
+        <div class="why-list">
+          <div class="why-item open">
+            <div class="why-item-header" onclick="toggleWhy(this)" tabindex="0" role="button" aria-expanded="true">
+              <div class="why-item-left">
+                <div class="why-item-icon"><i data-lucide="dumbbell"></i></div>
+                <span class="why-item-title"><span>Equipamentos</span> de Última Geração</span>
+              </div>
+              <span class="why-arrow">▾</span>
+            </div>
+            <div class="why-item-body">Maquinários Rocha, referência em qualidade, e constantemente renovados para
+              garantir a melhor experiência de treino. Tecnologia que entrega resultados reais.</div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-header" onclick="toggleWhy(this)" tabindex="0" role="button" aria-expanded="false">
+              <div class="why-item-left">
+                <div class="why-item-icon"><i data-lucide="building-2"></i></div>
+                <span class="why-item-title">Estrutura <span>Completa</span></span>
+              </div>
+              <span class="why-arrow">▾</span>
+            </div>
+            <div class="why-item-body">Vestiários, estacionamento e ambiente climatizado, pensados para o seu
+              conforto do início ao fim do treino. Tudo o que você precisa em um só lugar.</div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-header" onclick="toggleWhy(this)" tabindex="0" role="button" aria-expanded="false">
+              <div class="why-item-left">
+                <div class="why-item-icon"><i data-lucide="calendar-days"></i></div>
+                <span class="why-item-title">Aulas <span>Para Todo Perfil</span></span>
+              </div>
+              <span class="why-arrow">▾</span>
+            </div>
+            <div class="why-item-body">Diversas modalidades e horários ao longo da semana. Iniciante ou avançado, você
+              sempre encontra a turma certa — e nunca fica sem opção.</div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-header" onclick="toggleWhy(this)" tabindex="0" role="button" aria-expanded="false">
+              <div class="why-item-left">
+                <div class="why-item-icon"><i data-lucide="heart-handshake"></i></div>
+                <span class="why-item-title">Comunidade <span>Acolhedora</span></span>
+              </div>
+              <span class="why-arrow">▾</span>
+            </div>
+            <div class="why-item-body">Mais do que academia: uma família. O ambiente da Fitness 4 You é feito para te
+              motivar a aparecer todo dia — e quando você vier, vai querer voltar.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section class="plans" id="plans">
+    <div class="plans-header">
+      <span class="section-tag">Planos</span>
+      <h2 class="section-title">Planos <span>Flexíveis</span> para Cada Objetivo</h2>
+      <p class="section-sub">Escolha o plano que melhor encaixa na sua rotina. Todos incluem acesso à estrutura
+        completa.</p>
+    </div>
+    <div class="plans-grid">
+
+      <!-- Mensal -->
+      <div class="plan-card">
+        <div class="plan-name">Mensal</div>
+        <div class="plan-price"><sup>R$</sup> <span id="price-monthly">120</span></div>
+        <div class="plan-period">por mês • sem fidelidade</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Acesso livre à musculação</li>
+          <li>Acesso à ergometria</li>
+          <li>Todas as aulas coletivas adultos</li>
+        </ul>
+        <a href="#" class="plan-cta" onclick="openPaymentModal('mensal');return false;">Pagar Agora →</a>
+      </div>
+
+      <!-- Trimestral -->
+      <div class="plan-card featured">
+        <div class="plan-badge">Mais Popular</div>
+        <div class="plan-name">Trimestral</div>
+        <div class="plan-price"><sup>R$</sup> <span id="price-quarterly">330</span></div>
+        <div class="plan-period">3 meses • R$ 110/mês</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Acesso livre à musculação</li>
+          <li>Acesso à ergometria</li>
+          <li>Todas as aulas coletivas adultos</li>
+        </ul>
+        <a href="#" class="plan-cta" onclick="openPaymentModal('trimestral');return false;">Pagar Agora →</a>
+      </div>
+
+      <!-- Semestral -->
+      <div class="plan-card">
+        <div class="plan-name">Semestral</div>
+        <div class="plan-price"><sup>R$</sup> <span id="price-semi">600</span></div>
+        <div class="plan-period">6 meses • R$ 100/mês</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Acesso livre à musculação</li>
+          <li>Acesso à ergometria</li>
+          <li>Todas as aulas coletivas adultos</li>
+        </ul>
+        <a href="#" class="plan-cta" onclick="openPaymentModal('semestral');return false;">Pagar Agora →</a>
+      </div>
+
+      <!-- Anual -->
+      <div class="plan-card">
+        <div class="plan-name">Anual</div>
+        <div class="plan-price"><sup>R$</sup> <span id="price-annual">1.099</span></div>
+        <div class="plan-period">12 meses • R$ 91,58/mês</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Acesso livre à musculação</li>
+          <li>Acesso à ergometria</li>
+          <li>Todas as aulas coletivas adultos</li>
+        </ul>
+        <a href="#" class="plan-cta" onclick="openPaymentModal('anual');return false;">Pagar Agora →</a>
+      </div>
+
+      <div class="plans-subgroup-divider"><span>Planos Infantis Avulsos</span></div>
+
+      <!-- Crosskids Infantil -->
+      <div class="plan-card">
+        <div class="plan-name">Crosskids Infantil</div>
+        <div class="plan-price"><sup>R$</sup> <span>150</span></div>
+        <div class="plan-period">por mês</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Aulas de Crosskids</li>
+          <li>Atividades de desenvolvimento motor</li>
+          <li>Coordenação e socialização</li>
+          <li>Ambiente seguro e divertido</li>
+        </ul>
+        <a href="#" class="plan-cta" onclick="openPaymentModal('crosskids');return false;">Pagar Agora →</a>
+      </div>
+
+      <!-- Jiu-Jitsu Infantil -->
+      <div class="plan-card">
+        <div class="plan-name">Jiu-Jitsu Infantil</div>
+        <div class="plan-price"><sup>R$</sup> <span>150</span></div>
+        <div class="plan-period">por mês</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li>Aulas de Jiu-Jitsu Kids</li>
+          <li>Disciplina e respeito</li>
+          <li>Defesa pessoal infantil</li>
+          <li>Ambiente seguro e divertido</li>
+        </ul>
+        <a href="#" class="plan-cta" onclick="openPaymentModal('jiujitsu_infantil');return false;">Pagar Agora →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONVÊNIOS -->
+  <section style="background:var(--dark);padding:72px 6%;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span class="section-tag" style="justify-content:center;">Convênios Aceitos</span>
+      <h2 class="section-title">Aceitamos <span>Wellhub</span> e <span>TotalPass</span></h2>
+      <p class="section-sub" style="margin:0 auto;">Alunos de convênio têm acesso à musculação e à ergometria da academia.</p>
+    </div>
+
+    <div class="convenios-panel reveal">
+      <div class="convenio-badges">
+        <div class="convenio-badge">
+          <img class="convenio-badge-logo" src="imagens/fitness4you-wellhub-logo.png" alt="Wellhub" loading="lazy">
+          <div>
+            <div class="convenio-badge-name">Wellhub</div>
+            <div class="convenio-badge-sub">(antigo Gympass)</div>
+          </div>
+        </div>
+        <div class="convenio-badge">
+          <img class="convenio-badge-logo" src="imagens/fitness4you-totalpass-logo.png" alt="TotalPass" loading="lazy">
+          <div>
+            <div class="convenio-badge-name">TotalPass</div>
+            <div class="convenio-badge-sub">Convênio empresarial</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="convenio-divider"></div>
+
+      <div class="convenio-access">
+        <div class="convenio-access-title">O que está incluso</div>
+        <div class="convenio-access-items">
+          <div class="convenio-access-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Musculação
+          </div>
+          <div class="convenio-access-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Ergometria
+          </div>
+        </div>
+      </div>
+
+      <p class="convenio-howto">Check-in direto pelo app do convênio, na recepção.</p>
+
+      <p class="convenio-note">As aulas coletivas (adultos e infantis) não fazem parte dos convênios. Quer acesso completo à academia? <a href="#plans">Veja os planos →</a></p>
+    </div>
+  </section>
+
+  <!-- CLOUD GYM APP -->
+  <section class="cloudgym" id="cloudgym">
+    <div class="about-grid">
+      <div>
+        <div class="about-line reveal reveal-delay-1"></div>
+        <span class="section-tag reveal reveal-delay-1">App Cloud Gym</span>
+        <h2 class="section-title reveal reveal-delay-2">Seu Treino na <span>Palma da Mão</span></h2>
+        <p class="about-lead">
+          Sua ficha de treino fica salva no aplicativo Cloud Gym — atualizada pelos nossos professores sempre que sua
+          evolução pedir um ajuste. Você abre o app e já sabe exatamente o que treinar.
+        </p>
+
+        <div class="about-stats">
+          <div class="about-stat">
+            <div class="about-stat-icon"><i data-lucide="clipboard-list"></i></div>
+            <div class="about-stat-label">Ficha de treino digital</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-icon"><i data-lucide="user-check"></i></div>
+            <div class="about-stat-label">Atualizada pelo seu professor</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-icon"><i data-lucide="globe"></i></div>
+            <div class="about-stat-label">Acesso de qualquer lugar</div>
+          </div>
+        </div>
+
+        <div class="cloudgym-note">
+          <i data-lucide="info"></i>
+          <p>Exclusivo para alunos com plano na academia — quem treina por <strong>convênio (Wellhub/TotalPass)</strong> não tem acesso ao aplicativo Cloud Gym.</p>
+        </div>
+      </div>
+      <div class="about-image reveal">
+        <img src="imagens/fitness4you-recepcao.jpg" alt="Recepção da Fitness 4 You" style="width:100%;height:100%;object-fit:cover;display:block;" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- FACADE BANNER -->
+  <div class="facade-banner">
+    <div class="facade-overlay"></div>
+    <div class="facade-content reveal">
+      <div class="facade-line"></div>
+      <span class="section-tag" style="justify-content:center;margin-bottom:16px;">Nossa Estrutura</span>
+      <h2 class="facade-title">Venha Conhecer<br>a <span>Fitness 4 You</span></h2>
+      <p class="facade-sub">12 anos transformando vidas em Goiânia · Vila Isaura</p>
+      <a href="https://maps.app.goo.gl/6w852JFX8727t7qD7" class="btn-primary" target="_blank" rel="noopener noreferrer">
+        <span class="btn-primary-dot"></span>
+        <span class="btn-primary-label">Como Chegar</span>
+        <span class="btn-primary-reveal">Como Chegar <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="depoimentos">
+    <div class="testimonials-header">
+      <span class="section-tag">Depoimentos Reais</span>
+      <h2 class="section-title">Quem Treina <span>Comprova</span></h2>
+      <p class="section-sub">Veja o que nossos alunos falam sobre a Fitness 4 You.</p>
+    </div>
+
+    <div class="video-grid">
+
+      
+      <div class="video-card reveal" onclick="openVideoModal('videos/depoimento-1.mp4')" tabindex="0" role="button" aria-label="Assistir depoimento em vídeo 1">
+        <video preload="metadata" muted loop playsinline>
+          <source src="videos/depoimento-1.mp4" type="video/mp4">
+        </video>
+        <div class="video-play-overlay">
+          <div class="video-play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="video-card reveal reveal-delay-1" onclick="openVideoModal('videos/depoimento-2.mp4')" tabindex="0" role="button" aria-label="Assistir depoimento em vídeo 2">
+        <video preload="metadata" muted loop playsinline>
+          <source src="videos/depoimento-2.mp4" type="video/mp4">
+        </video>
+        <div class="video-play-overlay">
+          <div class="video-play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="video-card reveal reveal-delay-2" onclick="openVideoModal('videos/depoimento-3.mp4')" tabindex="0" role="button" aria-label="Assistir depoimento em vídeo 3">
+        <video preload="metadata" muted loop playsinline>
+          <source src="videos/depoimento-3.mp4" type="video/mp4">
+        </video>
+        <div class="video-play-overlay">
+          <div class="video-play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="video-card reveal reveal-delay-3" onclick="openVideoModal('videos/depoimento-4.mp4')" tabindex="0" role="button" aria-label="Assistir depoimento em vídeo 4">
+        <video preload="metadata" muted loop playsinline>
+          <source src="videos/depoimento-4.mp4" type="video/mp4">
+        </video>
+        <div class="video-play-overlay">
+          <div class="video-play-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- HORÁRIOS -->
+  <section class="hours" id="horarios">
+    <div style="text-align: center; margin-bottom: 60px; position: relative; z-index: 2;">
+      <span class="section-tag">Funcionamento</span>
+      <h2 class="section-title">Nossos <span>Horários</span></h2>
+      <p class="section-sub" style="margin: 0 auto;">Estamos aqui para você durante toda a semana. Escolha o melhor horário e venha treinar.</p>
+    </div>
+    <div class="hours-grid">
+      <div class="hours-card reveal reveal-delay-1" data-days="1,2,3,4,5" data-open="5" data-close="23">
+        <div class="hours-icon"><i data-lucide="clock"></i></div>
+        <div class="hours-days">Segunda — Sexta</div>
+        <div class="hours-time">05h <span>—</span> 23h</div>
+        <div class="hours-sub">18 horas abertas para você</div>
+        <div class="hours-status"></div>
+      </div>
+      <div class="hours-card reveal reveal-delay-2" data-days="6" data-open="6" data-close="14">
+        <div class="hours-icon"><i data-lucide="sunrise"></i></div>
+        <div class="hours-days">Sábado</div>
+        <div class="hours-time">06h <span>—</span> 14h</div>
+        <div class="hours-sub">Manhã completa disponível</div>
+        <div class="hours-status"></div>
+      </div>
+      <div class="hours-card reveal reveal-delay-3" data-days="0" data-open="8" data-close="12">
+        <div class="hours-icon"><i data-lucide="coffee"></i></div>
+        <div class="hours-days">Domingo</div>
+        <div class="hours-time">08h <span>—</span> 12h</div>
+        <div class="hours-sub">Treino da manhã garantido</div>
+        <div class="hours-status"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div style="text-align: center;">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">Perguntas <span>Frequentes</span></h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item open">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="true">
+          Quanto tempo por semana preciso dedicar?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Com 3 treinos de 45 a 60 minutos por semana já é possível ver resultados consistentes.
+          Nossos instrutores montam o plano de acordo com sua disponibilidade real — não com o mundo ideal.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Serve para quem nunca treinou antes?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Sim, absolutamente. Trabalhamos com todos os níveis: iniciantes, intermediários e
+          avançados. A avaliação inicial define o ponto de partida ideal e o treino é adaptado ao seu corpo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          E se eu não gostar? Tem devolução?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Sim. Se você desistir, devolvemos o valor proporcional ao período que você já
+          utilizou da academia.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Como funciona o acesso? Precisa de agendamento?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">O acesso à área de musculação é livre. Algumas aulas em grupo têm horários fixos e podem
+          precisar de reserva. Seu instrutor te explica tudo no primeiro dia.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Quais são as formas de pagamento?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Aceitamos cartão de crédito, débito, Pix e dinheiro.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Tem suporte e acompanhamento depois que começo?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Sim. Você não vai ser abandonado depois da matrícula. Nossos instrutores acompanham sua
+          evolução, ajustam o treino e estão disponíveis para tirar dúvidas pelo WhatsApp e pessoalmente.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          Posso trazer um amigo para conhecer antes de assinar?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Claro. Oferecemos visita guiada e um treino experimental gratuito. Manda mensagem pra
+          gente no WhatsApp para agendar — sem compromisso nenhum.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
+          A academia é bem localizada? Tem estacionamento?
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">Estamos na Rua 15, esquina com a Av. Senador Jaime, Qd I Lt 20/21, Vila Isaura — Goiânia, GO. Fácil de achar e com <strong>estacionamento gratuito</strong> no local.</div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <img src="imagens/WhatsApp Image 2026-04-09 at 21.29.00.jpeg" alt="Fitness 4 You" style="width:90px;height:90px;border-radius:50%;object-fit:cover;display:block;margin:0 auto 32px;box-shadow:0 8px 32px rgba(220,31,38,0.35);">
+    <h2>Pronto Para <span>Crescer?</span></h2>
+    <p>Dê o primeiro passo rumo ao corpo e à vida que você merece. Venha treinar com a gente — a primeira conversa é
+      grátis.</p>
+    <a href="https://wa.me/5562996487510?text=Quero+comecar+na+Fitness+4+You!" class="btn-primary" target="_blank" rel="noopener noreferrer">
+      <span class="btn-primary-dot"></span>
+      <span class="btn-primary-label">Fale Conosco no WhatsApp</span>
+      <span class="btn-primary-reveal">Fale Conosco no WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <p class="cta-micro" style="margin-top:40px;">Sem compromisso. Resposta rápida. Sua transformação começa hoje.</p>
+    <p class="cta-ps">Todo dia que passa é um dia de atraso na sua transformação. A Fitness 4 You tem a
+      estrutura, os profissionais e a comunidade que você precisa. <strong>Entre em contato agora e venha
+        conhecer</strong> — você não vai se arrepender.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">
+      <img src="imagens/WhatsApp Image 2026-04-09 at 21.29.00.jpeg" alt="Fitness 4 You" style="height:40px;width:40px;border-radius:50%;object-fit:cover;display:block;">
+    </div>
+    <div style="text-align:center;">
+      <p style="color:#555;font-size:12px;margin-bottom:6px;">Rua 15, esq. Av. Sen. Jaime, Qd I Lt 20/21 — Vila Isaura, Goiânia, GO</p>
+      <a href="tel:+5562996487510" style="color:#888;font-size:13px;text-decoration:none;display:block;margin-bottom:10px;">(62) 99648-7510</a>
+      <p style="color:#666;font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Horários</p>
+      <p style="color:#888;font-size:13px;line-height:1.8;">Seg–Sex: 05h às 23h &nbsp;|&nbsp; Sáb: 06h às 14h &nbsp;|&nbsp; Dom: 08h às 12h</p>
+      <p style="color:#333;font-size:11px;margin-top:12px;">© 2026 Fitness 4 You. Todos os direitos reservados.</p>
+    </div>
+    <div style="display: flex; gap: 20px;">
+      <a href="#" onclick="event.preventDefault(); openPrivacyModal();">Política de Privacidade</a>
+      <a href="https://wa.me/5562996487510" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://www.instagram.com/fitness4youacademia/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu-links">
+      <li><a href="#about"        onclick="closeMobileMenu()">Sobre</a></li>
+      <li><a href="#services"     onclick="closeMobileMenu()">Serviços</a></li>
+      <li><a href="#plans"        onclick="closeMobileMenu()">Planos</a></li>
+      <li><a href="#depoimentos"  onclick="closeMobileMenu()">Depoimentos</a></li>
+      <li><a href="#horarios"     onclick="closeMobileMenu()">Horários</a></li>
+      <li><a href="#faq"          onclick="closeMobileMenu()">FAQ</a></li>
+    </ul>
+    <div class="mobile-menu-divider"></div>
+    <a href="https://wa.me/5562996487510?text=Quero+conhecer+a+Fitness+4+You!" class="btn-primary" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()">
+      <span class="btn-primary-dot"></span>
+      <span class="btn-primary-label">Fale Conosco</span>
+      <span class="btn-primary-reveal">Fale Conosco <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </div>
+
+  <!-- PAYMENT MODAL -->
+  <div class="payment-modal" id="paymentModal" role="dialog" aria-modal="true" aria-label="Pagamento">
+    <div class="payment-backdrop" onclick="closePaymentModal()"></div>
+    <div class="payment-content">
+      <div class="pay-header">
+        <div class="pay-steps">
+          <div class="pay-dot active" id="pd1">1</div>
+          <div class="pay-line" id="pl1"></div>
+          <div class="pay-dot" id="pd2">2</div>
+          <div class="pay-line" id="pl2"></div>
+          <div class="pay-dot" id="pd3">3</div>
+        </div>
+        <button class="pay-close" onclick="closePaymentModal()" aria-label="Fechar pagamento">✕</button>
+      </div>
+      <div class="pay-body">
+
+        <!-- PASSO 1: Dados -->
+        <div class="pay-pane active" id="pp1">
+          <div class="pay-title">Seus Dados</div>
+          <div class="pay-subtitle">Preencha para confirmarmos seu pagamento</div>
+          <div class="pay-field">
+            <label for="payName">Nome Completo</label>
+            <input type="text" id="payName" placeholder="Ex: João Silva">
+          </div>
+          <div class="pay-field">
+            <label for="payCPF">CPF</label>
+            <input type="text" id="payCPF" placeholder="000.000.000-00" maxlength="14" oninput="maskCPF(this)">
+          </div>
+          <div class="pay-field">
+            <label for="payPlan">Plano</label>
+            <select id="payPlan" onchange="onPlanChange()">
+              <option value="mensal">Mensal — R$ 120,00</option>
+              <option value="trimestral">Trimestral — R$ 330,00</option>
+              <option value="semestral">Semestral — R$ 600,00</option>
+              <option value="anual">Anual — R$ 1.099,00</option>
+              <option value="crosskids">Crosskids Infantil — R$ 150,00</option>
+              <option value="jiujitsu_infantil">Jiu-Jitsu Infantil — R$ 150,00</option>
+            </select>
+          </div>
+          <div class="pay-field" id="payStudentField">
+            <label>Você já é aluno da Fitness 4 You?</label>
+            <div class="student-toggle">
+              <button class="student-btn active" id="btnYes" onclick="setStudent(true)">✓ Já sou aluno</button>
+              <button class="student-btn" id="btnNo" onclick="setStudent(false)">Não, sou novo</button>
+            </div>
+            <p class="student-note" id="studentNote">Mensalidade: R$ 120,00</p>
+          </div>
+          <button class="pay-btn" onclick="payGoStep2()">Continuar →</button>
+        </div>
+
+        <!-- PASSO 2: Pix -->
+        <div class="pay-pane" id="pp2">
+          <div class="pay-title">Pague via Pix</div>
+          <div class="pay-subtitle">Escaneie o QR Code ou copie o código abaixo</div>
+          <div class="pay-qr-wrap">
+            <img id="payQR" src="" alt="QR Code Pix">
+          </div>
+          <div class="pay-amount-box">
+            <span class="pay-amount-label">Total a pagar</span>
+            <span class="pay-amount-value" id="payAmtDisplay">R$ 120,00</span>
+          </div>
+          <div class="pay-or-sep">Pix Copia e Cola</div>
+          <div class="pay-pix-box">
+            <code class="pay-pix-code" id="payPixStr"></code>
+            <button class="pay-copy-btn" id="payCopyBtn" onclick="copyPix()">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              Copiar código Pix
+            </button>
+          </div>
+          <button class="pay-btn secondary" onclick="payGoStep3()">Já paguei ✓</button>
+        </div>
+
+        <!-- PASSO 3: Confirmação -->
+        <div class="pay-pane" id="pp3">
+          <div class="pay-success-icon">✓</div>
+          <div class="pay-title" style="text-align:center;">Quase lá!</div>
+          <div class="pay-subtitle" style="text-align:center;margin-bottom:24px;">Clique abaixo para avisar a academia e confirmar seu acesso.</div>
+          <a id="payWABtn" href="#" class="pay-wa-btn" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Confirmar Pagamento no WhatsApp
+          </a>
+          <button class="pay-skip-btn" onclick="closePaymentModal()">Fechar</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Vídeo">
+    <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+    <div class="video-modal-content">
+      <button class="video-modal-close" onclick="closeVideoModal()" aria-label="Fechar vídeo">✕</button>
+      <video id="modalVideo" controls playsinline></video>
+    </div>
+  </div>
+
+  <!-- PRIVACY POLICY MODAL -->
+  <div class="video-modal" id="privacyModal" role="dialog" aria-modal="true" aria-label="Política de Privacidade">
+    <div class="video-modal-backdrop" onclick="closePrivacyModal()"></div>
+    <div class="video-modal-content info-modal-content">
+      <button class="video-modal-close" onclick="closePrivacyModal()" aria-label="Fechar política de privacidade">✕</button>
+      <h2>Política de Privacidade</h2>
+      <p>A Fitness 4 You respeita a sua privacidade e segue a Lei Geral de Proteção de Dados (LGPD). Esta página explica quais dados coletamos neste site e como eles são usados.</p>
+
+      <h3>Quais dados coletamos</h3>
+      <p>Ao preencher o formulário de pagamento, coletamos seu nome completo e CPF, usados apenas para identificar sua matrícula e confirmar o pagamento do plano escolhido. Ao entrar em contato pelo WhatsApp, os dados trocados na conversa seguem a política de privacidade do próprio WhatsApp.</p>
+
+      <h3>Como usamos seus dados</h3>
+      <p>Usamos essas informações exclusivamente para viabilizar sua matrícula, confirmar pagamentos e entrar em contato sobre seu plano. Não vendemos nem compartilhamos seus dados com terceiros para fins de marketing.</p>
+
+      <h3>Cookies e rastreamento</h3>
+      <p>Este site não utiliza cookies de rastreamento nem ferramentas de analytics de terceiros.</p>
+
+      <h3>Seus direitos</h3>
+      <p>Você pode solicitar a qualquer momento a correção ou exclusão dos seus dados, entrando em contato pelo <a href="https://wa.me/5562996487510" target="_blank" rel="noopener noreferrer">WhatsApp (62) 99648-7510</a>.</p>
+    </div>
+  </div>
+
+  <!-- SOCIAL FAB -->
+  <div class="social-fab" id="socialFab">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/fitness4youacademia/" class="social-fab-item fab-instagram" target="_blank" rel="noopener noreferrer" data-label="Instagram" aria-label="Instagram">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+    </a>
+    <!-- WhatsApp -->
+    <a href="https://wa.me/5562996487510?text=Quero+conhecer+a+Fitness+4+You!" class="social-fab-item fab-whatsapp" target="_blank" rel="noopener noreferrer" data-label="WhatsApp" aria-label="WhatsApp">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+    <!-- Botão principal -->
+    <button class="social-fab-main" onclick="toggleSocialFab()" aria-label="Redes Sociais">
+      <!-- Ícone aberto: rede social / chat -->
+      <svg class="fab-icon-open" width="26" height="26" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7l-4 4V5a3 3 0 0 1 3-3h12zm-5 5h-2v3H8v2h3v3h2v-3h3v-2h-3V7z"/>
+      </svg>
+      <!-- Ícone fechado: X -->
+      <svg class="fab-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Lazy-load do vídeo institucional (18MB) só quando a seção Sobre está prestes a aparecer
+    const institutionalVideo = document.getElementById('institutionalVideo');
+    if (institutionalVideo) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const source = institutionalVideo.querySelector('source[data-src]');
+            if (source) {
+              source.src = source.dataset.src;
+              institutionalVideo.load();
+              institutionalVideo.play().catch(() => {});
+            }
+            videoObserver.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '300px' });
+      videoObserver.observe(institutionalVideo);
+    }
+
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', item.classList.contains('open'));
+    }
+    function toggleWhy(header) {
+      const item = header.closest('.why-item');
+      item.classList.toggle('open');
+      header.setAttribute('aria-expanded', item.classList.contains('open'));
+    }
+
+    /* Ativa elementos com role="button" (divs clicáveis) via teclado */
+    document.addEventListener('keydown', e => {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target.matches('[role="button"]')) {
+        e.preventDefault();
+        e.target.click();
+      }
+    });
+
+    /* ── INSTITUTIONAL VIDEO SOUND TOGGLE ── */
+    function toggleVideoSound() {
+      const video = document.getElementById('institutionalVideo');
+      const iconMuted = document.getElementById('iconMuted');
+      const iconSound = document.getElementById('iconSound');
+      video.muted = !video.muted;
+      iconMuted.style.display = video.muted ? 'block' : 'none';
+      iconSound.style.display = video.muted ? 'none' : 'block';
+    }
+
+    /* ── NOTICE BAR ── */
+    document.body.classList.add('notice-visible');
+
+    function closeNotice() {
+      document.getElementById('noticeBar').classList.add('hidden');
+      document.body.classList.remove('notice-visible');
+    }
+
+    /* ── PAYMENT SYSTEM ── */
+    const PAY_PLANS = {
+      mensal_aluno:     { label:'Mensal',             display:'R$ 120,00', qr:'QR Codes/Pagamento Mensal.jpeg',             pix:'00020101021126560014br.gov.bcb.pix0114295847240001010216Pagamento Mensal5204000053039865406120.005802BR5913FITNESS 4 YOU6007GOIANIA62070503***6304EC8D' },
+      mensal_matricula: { label:'Mensal + Matrícula', display:'R$ 130,00', qr:'QR Codes/Pagamento Mensal + Matrícula.jpeg', pix:'00020101021126670014br.gov.bcb.pix0114295847240001010227Pagamento Mensal  Matricula5204000053039865406130.005802BR5913FITNESS 4 YOU6007GOIANIA62070503***6304E751' },
+      trimestral:       { label:'Trimestral',         display:'R$ 330,00', qr:'QR Codes/Pagamento Trimestral.jpeg',         pix:'00020101021126600014br.gov.bcb.pix0114295847240001010220Pagamento Trimestral5204000053039865406330.005802BR5913FITNESS 4 YOU6007GOIANIA62070503***6304A1C1' },
+      semestral:        { label:'Semestral',          display:'R$ 600,00', qr:'QR Codes/Pagamento Semestral.jpeg',          pix:'00020101021126590014br.gov.bcb.pix0114295847240001010219Pagamento Semestral5204000053039865406600.005802BR5913FITNESS 4 YOU6007GOIANIA62070503***630419B2' },
+      anual:            { label:'Anual',              display:'R$ 1.099,00', qr:'QR Codes/Pagamento Anual.jpeg',           pix:'00020101021126550014br.gov.bcb.pix0114295847240001010215Pagamento Anual52040000530398654071099.005802BR5913FITNESS 4 YOU6007GOIANIA62070503***6304E02D' },
+      crosskids:        { label:'Crosskids Infantil', display:'R$ 150,00', qr:'QR Codes/Pagamento CrossKids.jpeg',         pix:'00020101021126590014br.gov.bcb.pix0114295847240001010219Pagamento CrossKids5204000053039865406150.005802BR5913FITNESS 4 YOU6007GOIANIA62070503***6304F59C' },
+      jiujitsu_infantil:{ label:'Jiu-Jitsu Infantil', display:'R$ 150,00', qr:'QR Codes/Pagamento JiuJitsu Infantil.jpeg', pix:'00020101021126630014br.gov.bcb.pix0114295847240001010223Pagamento JiuJitsu Kids5204000053039865406150.005802BR5913FITNESS 4 YOU6007GOIANIA62070503***63047D94' }
+    };
+
+    let payIsAluno = true;
+
+    /* ── FOCUS TRAP genérico pros modais ── */
+    let lastFocusedEl = null;
+    const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select, textarea, [tabindex]:not([tabindex="-1"])';
+
+    function trapFocus(modalEl) {
+      lastFocusedEl = document.activeElement;
+      const items = modalEl.querySelectorAll(FOCUSABLE);
+      if (items.length) items[0].focus();
+
+      function handleKeydown(e) {
+        if (e.key !== 'Tab') return;
+        const focusables = Array.from(modalEl.querySelectorAll(FOCUSABLE)).filter(el => el.offsetParent !== null);
+        if (!focusables.length) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+      modalEl._trapHandler = handleKeydown;
+      modalEl.addEventListener('keydown', handleKeydown);
+    }
+
+    function releaseFocus(modalEl) {
+      if (modalEl._trapHandler) {
+        modalEl.removeEventListener('keydown', modalEl._trapHandler);
+        modalEl._trapHandler = null;
+      }
+      if (lastFocusedEl) lastFocusedEl.focus();
+    }
+
+    function openPaymentModal(plan) {
+      const sel = document.getElementById('payPlan');
+      sel.value = plan || 'mensal';
+      payIsAluno = true;
+      document.getElementById('btnYes').classList.add('active');
+      document.getElementById('btnNo').classList.remove('active');
+      document.getElementById('studentNote').textContent = 'Mensalidade: R$ 120,00';
+      onPlanChange();
+      paySetStep(1);
+      const modal = document.getElementById('paymentModal');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      trapFocus(modal);
+    }
+
+    function closePaymentModal() {
+      const modal = document.getElementById('paymentModal');
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      releaseFocus(modal);
+    }
+
+    function paySetStep(s) {
+      [1,2,3].forEach(i => {
+        document.getElementById('pp'+i).classList.toggle('active', i===s);
+        const dot = document.getElementById('pd'+i);
+        dot.classList.remove('active','done');
+        if (i < s) dot.classList.add('done');
+        else if (i === s) dot.classList.add('active');
+        if (i < 3) document.getElementById('pl'+i).classList.toggle('done', i < s);
+      });
+    }
+
+    function onPlanChange() {
+      const v = document.getElementById('payPlan').value;
+      document.getElementById('payStudentField').style.display = v === 'mensal' ? 'block' : 'none';
+    }
+
+    function setStudent(isAluno) {
+      payIsAluno = isAluno;
+      document.getElementById('btnYes').classList.toggle('active', isAluno);
+      document.getElementById('btnNo').classList.toggle('active', !isAluno);
+      document.getElementById('studentNote').textContent = isAluno
+        ? 'Mensalidade: R$ 120,00'
+        : 'Matrícula + Mensalidade: R$ 130,00';
+    }
+
+    function getPayKey() {
+      const v = document.getElementById('payPlan').value;
+      if (v === 'mensal') return payIsAluno ? 'mensal_aluno' : 'mensal_matricula';
+      return v;
+    }
+
+    function payGoStep2() {
+      const name = document.getElementById('payName').value.trim();
+      const cpf  = document.getElementById('payCPF').value.trim();
+      if (!name) { document.getElementById('payName').focus(); return; }
+      if (cpf.replace(/\D/g,'').length < 11) { document.getElementById('payCPF').focus(); return; }
+      const p = PAY_PLANS[getPayKey()];
+      // Planos sem QR Code: redireciona para WhatsApp
+      if (!p.qr) {
+        const msg = encodeURIComponent(`Olá! Tenho interesse no plano ${p.label} (${p.display}).\n\n👤 Nome: ${name}\n📋 CPF: ${cpf}`);
+        window.open(`https://wa.me/5562996487510?text=${msg}`, '_blank');
+        closePaymentModal();
+        return;
+      }
+      document.getElementById('payQR').src            = p.qr;
+      document.getElementById('payAmtDisplay').textContent = p.display;
+      document.getElementById('payPixStr').textContent = p.pix;
+      const btn = document.getElementById('payCopyBtn');
+      btn.classList.remove('copied');
+      btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar código Pix';
+      paySetStep(2);
+    }
+
+    function payGoStep3() {
+      const name = document.getElementById('payName').value.trim();
+      const cpf  = document.getElementById('payCPF').value.trim();
+      const p    = PAY_PLANS[getPayKey()];
+      const now  = new Date();
+      const date = now.toLocaleDateString('pt-BR');
+      const time = now.toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
+      const msg  = encodeURIComponent(
+        `Olá! Realizei o pagamento via Pix.\n\n` +
+        `👤 Nome: ${name}\n` +
+        `📋 CPF: ${cpf}\n` +
+        `💪 Plano: ${p.label}\n` +
+        `💰 Valor: ${p.display}\n` +
+        `📅 Data: ${date} às ${time}`
+      );
+      document.getElementById('payWABtn').href = `https://wa.me/5562996487510?text=${msg}`;
+      paySetStep(3);
+    }
+
+    function copyPix() {
+      const code = document.getElementById('payPixStr').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.getElementById('payCopyBtn');
+        btn.classList.add('copied');
+        btn.innerHTML = '✓ Código copiado!';
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copiar código Pix';
+        }, 2500);
+      });
+    }
+
+    function maskCPF(el) {
+      let v = el.value.replace(/\D/g,'').substring(0,11);
+      if (v.length > 9)      v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{0,2})/,'$1.$2.$3-$4');
+      else if (v.length > 6) v = v.replace(/(\d{3})(\d{3})(\d{0,3})/,'$1.$2.$3');
+      else if (v.length > 3) v = v.replace(/(\d{3})(\d{0,3})/,'$1.$2');
+      el.value = v;
+    }
+
+    /* ── MOBILE MENU ── */
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const btn  = document.getElementById('navHamburger');
+      menu.classList.toggle('open');
+      btn.classList.toggle('open');
+      document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMobileMenu() {
+      document.getElementById('mobileMenu').classList.remove('open');
+      document.getElementById('navHamburger').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileMenu(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && document.getElementById('paymentModal').classList.contains('open')) {
+        closePaymentModal();
+      }
+    });
+
+    /* ── VIDEO CARDS HOVER + MODAL ── */
+    document.querySelectorAll('.video-card').forEach(card => {
+      const video = card.querySelector('video');
+      if (!video) return;
+      card.addEventListener('mouseenter', () => {
+        video.play().catch(() => {});
+        card.classList.add('is-hovering');
+      });
+      card.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+        card.classList.remove('is-hovering');
+      });
+    });
+
+    function openVideoModal(src) {
+      const modal = document.getElementById('videoModal');
+      const mv = document.getElementById('modalVideo');
+      document.querySelectorAll('.video-card video').forEach(v => { v.pause(); v.currentTime = 0; });
+      document.querySelectorAll('.video-card').forEach(c => c.classList.remove('is-hovering'));
+      mv.src = src;
+      mv.play().catch(() => {});
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      trapFocus(modal);
+    }
+
+    function closeVideoModal() {
+      const modal = document.getElementById('videoModal');
+      const mv = document.getElementById('modalVideo');
+      mv.pause();
+      mv.src = '';
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      releaseFocus(modal);
+    }
+
+    function openPrivacyModal() {
+      const modal = document.getElementById('privacyModal');
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      trapFocus(modal);
+    }
+
+    function closePrivacyModal() {
+      const modal = document.getElementById('privacyModal');
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+      releaseFocus(modal);
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeVideoModal(); });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && document.getElementById('privacyModal').classList.contains('open')) {
+        closePrivacyModal();
+      }
+    });
+
+    /* ── STAT COUNTER ANIMATION ── */
+
+    function toggleSocialFab() {
+      document.getElementById('socialFab').classList.toggle('open');
+    }
+    // Fecha ao clicar fora
+    document.addEventListener('click', function(e) {
+      const fab = document.getElementById('socialFab');
+      if (!fab.contains(e.target)) fab.classList.remove('open');
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id === '#') return;
+        const el = document.querySelector(id);
+        if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
+
+    // Nav transparente no hero, glass ao sair
+    const nav = document.querySelector('nav');
+    const heroSection = document.querySelector('.hero');
+    function updateNav() {
+      const heroBottom = heroSection ? heroSection.offsetHeight : window.innerHeight;
+      if (window.scrollY < heroBottom - 80) {
+        nav.style.opacity = '0';
+        nav.style.pointerEvents = 'none';
+      } else {
+        nav.style.opacity = '1';
+        nav.style.pointerEvents = 'auto';
+        nav.style.background = 'rgba(8, 4, 4, 0.75)';
+        nav.style.backdropFilter = 'blur(24px) saturate(180%)';
+        nav.style.webkitBackdropFilter = 'blur(24px) saturate(180%)';
+        nav.style.borderBottom = '1px solid rgba(220, 31, 38, 0.18)';
+        nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.4)';
+      }
+    }
+    window.addEventListener('scroll', updateNav);
+    updateNav();
+    lucide.createIcons();
+
+    /* Preços dos planos — contagem ao entrar na tela */
+    (function () {
+      const priceEls = document.querySelectorAll('.plan-price span');
+      if (!priceEls.length) return;
+
+      function animatePrice(el) {
+        const target = parseInt(el.textContent.replace(/\./g, ''), 10);
+        if (isNaN(target)) return;
+        const duration = 1000;
+        const start = performance.now();
+        (function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.floor(target * eased);
+          el.textContent = value.toLocaleString('pt-BR');
+          if (progress < 1) requestAnimationFrame(tick);
+          else el.textContent = target.toLocaleString('pt-BR');
+        })(start);
+      }
+
+      const priceObserver = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          animatePrice(e.target);
+          priceObserver.unobserve(e.target);
+        });
+      }, { threshold: 0.5 });
+
+      priceEls.forEach(el => priceObserver.observe(el));
+    })();
+
+    /* Horários — destaca o card de hoje e mostra se está aberto agora */
+    (function () {
+      const now = new Date();
+      const day = now.getDay();
+      const hour = now.getHours() + now.getMinutes() / 60;
+
+      document.querySelectorAll('.hours-card').forEach(card => {
+        const days = card.dataset.days.split(',').map(Number);
+        if (!days.includes(day)) return;
+
+        card.classList.add('hours-card-today');
+        const open = parseFloat(card.dataset.open);
+        const close = parseFloat(card.dataset.close);
+        const statusEl = card.querySelector('.hours-status');
+        const isOpen = hour >= open && hour < close;
+
+        statusEl.classList.add(isOpen ? 'is-open' : 'is-closed');
+        statusEl.innerHTML = '<span class="hours-status-dot"></span>' +
+          (isOpen
+            ? `Aberto agora — fecha às ${card.dataset.close}h`
+            : hour < open
+              ? `Fechado — abre às ${card.dataset.open}h`
+              : 'Fechado por hoje');
+      });
+    })();
+
+  </script>
+</body>
+
+</html>
