@@ -2532,12 +2532,10 @@
       border-color: rgba(220,31,38,0.6);
     }
     .pay-field .pay-consent-label input[type="checkbox"]:checked {
-      background: var(--orange); border-color: var(--orange);
+      background-color: var(--orange); border-color: var(--orange);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='4 12.5 9.5 18 20 6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: center; background-size: 13px 13px;
       transform: scale(1.05);
-    }
-    .pay-field .pay-consent-label input[type="checkbox"]:checked::after {
-      content: '✓';
-      color: #fff; font-size: 14px; font-weight: 700; line-height: 1;
     }
     .pay-field .pay-consent-label input[type="checkbox"]:focus-visible {
       outline: 2px solid var(--orange); outline-offset: 2px;
