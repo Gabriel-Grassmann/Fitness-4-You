@@ -2520,9 +2520,10 @@
       font-family: 'DM Sans', sans-serif; cursor: pointer;
     }
     .pay-field .pay-consent-label input[type="checkbox"] {
-      appearance: none; -webkit-appearance: none;
+      appearance: none; -webkit-appearance: none; -moz-appearance: none;
       display: flex; align-items: center; justify-content: center;
-      width: 21px; height: 21px; flex-shrink: 0; margin: 2px 0 0;
+      width: 21px; height: 21px; min-width: 21px; min-height: 21px;
+      flex-shrink: 0; margin: 2px 0 0; padding: 0;
       border-radius: 5px; border: 1.5px solid rgba(255,255,255,0.3);
       background: rgba(255,255,255,0.05); cursor: pointer;
       transition: background 0.15s, border-color 0.15s, transform 0.1s;
