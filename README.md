@@ -53,14 +53,26 @@ Landing page completa da academia **Fitness 4 You**, pensada para converter visi
 
 ```
 .
-├── index.html          # Site completo (HTML, CSS e JS)
+├── index.html          # Estrutura e estilos do site
+├── js/
+│   ├── main.js         # Interações (menu, modais, pagamento Pix, FAQ)
+│   └── lucide.min.js   # Ícones Lucide (hospedados localmente)
 ├── imagens/            # Logo, fachada, recepção, ícones e logos de convênios
 ├── modalidades/        # Fotos das aulas coletivas
 ├── videos/             # Vídeo institucional e depoimentos
 ├── QR Codes/           # QR Codes Pix de cada plano
+├── vercel.json         # Headers de segurança (CSP, HSTS, anti-clickjacking)
 ├── robots.txt
 └── sitemap.xml
 ```
+
+## Segurança
+
+- **Content Security Policy** rígida: só executa scripts do próprio domínio, sem scripts inline
+- **HSTS**, **X-Frame-Options** e `frame-ancestors 'none'` contra clickjacking na página de pagamento
+- `X-Content-Type-Options`, `Referrer-Policy` e `Permissions-Policy`
+- Nenhuma dependência carregada de CDN de terceiros, exceto as fontes do Google
+- Os dados digitados no pagamento (nome e CPF) não são enviados a nenhum servidor: seguem apenas na mensagem do WhatsApp
 
 ## Como rodar localmente
 
@@ -79,7 +91,7 @@ Depois acesse **http://localhost:8000**.
 ## Tecnologias
 
 - **HTML5, CSS3 e JavaScript puro**, sem frameworks
-- [Lucide Icons](https://lucide.dev/) via CDN
+- [Lucide Icons](https://lucide.dev/) hospedado no próprio projeto
 - Google Fonts: *Bebas Neue*, *Barlow Condensed* e *DM Sans*
 
 ## A academia
